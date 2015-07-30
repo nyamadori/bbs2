@@ -3,3 +3,26 @@ machine:
     RAILS_ENV: test
   ruby:
     version: 2.2.2
+
+dependencies:
+  pre:
+    - sudo pip install awsebcli
+  cache_directories:
+    - "vendor/bundle"
+  override:
+    - bundle -j4 --path=vendor/bundle --without development production
+
+test:
+  pre:
+    - bundle exec rubocop
+
+# deployment:
+#   development:
+#     branch: develop
+#     commands:
+#       - eb deploy bbs2-dev
+#
+#   staging:
+#     branch: master
+#     commands:
+#       - eb deploy bbs2-staging
