@@ -1,0 +1,5 @@
+machine:
+  environment:
+    RAILS_ENV: test
+  ruby:
+    version: 2.2.2
