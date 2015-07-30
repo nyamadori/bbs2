@@ -12,10 +12,6 @@ dependencies:
   override:
     - bundle -j4 --path=vendor/bundle --without development production
 
-test:
-  pre:
-    - bundle exec rubocop
-
 # deployment:
 #   development:
 #     branch: develop
